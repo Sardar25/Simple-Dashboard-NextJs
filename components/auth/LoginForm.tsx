@@ -31,7 +31,7 @@ const formSchema = z.object({
     })
 
 
-    const handleSubmit = (data:any)=>{
+    const handleSubmit = ()=>{
         router.push('/')
     }
 

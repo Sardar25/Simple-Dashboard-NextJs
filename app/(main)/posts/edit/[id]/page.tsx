@@ -4,7 +4,7 @@ import BackButton from '@/components/BackButton'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
-import { Form,FormControl,FormField,FormItem,FormMessage,FormLabel, FormDescription } from '@/components/ui/form'
+import { Form,FormControl,FormField,FormItem,FormMessage,FormLabel } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
@@ -32,7 +32,7 @@ interface EditPostProps {
         id:string
     }>
 }
-const page = ( { params } : EditPostProps ) => {
+const EditPostPage = ( { params } : EditPostProps ) => {
 
 
 const { toast } = useToast();
@@ -50,7 +50,7 @@ const { id } = React.use(params);
         }
     })
 
-    const handleSubmit = (data:any)=>{
+    const handleSubmit = ()=>{
         toast({
             title: "Post Updated Successfully",
             description: `Updated by ${post?.author} on ${post?.date}`,
@@ -139,4 +139,4 @@ const { id } = React.use(params);
   )
 }
 
-export default page
+export default EditPostPage
